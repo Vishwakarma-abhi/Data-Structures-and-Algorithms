@@ -35,6 +35,7 @@ public class Linked_List {
                     list.display();
                     break;
                 case 5:
+                    
                     list.insert_pos();
                     break;
                 case 6:
@@ -45,6 +46,9 @@ public class Linked_List {
                     break;
                 case 8:
                     list.delete_pos();
+                    break;
+                case 9:
+                    list.dele_index();
                     break;
                 default :
                     System.out.println("Not a Valid choice");
@@ -109,36 +113,31 @@ class Linkedlist{
     public void insert_pos()
     {
         Node node=new Node();
-        Node temp=head;
-        Node node2 = head;
-        int count=0;
-        while(node2.next !=null)
-        {
-            node=node2.next;
-            count++;
-        }
         System.out.println("Enter the position where you want to insert");
         int pos=sc.nextInt();
         System.out.println("Enter the data to be inserted");
         int d=sc.nextInt();
         node.data=d;
-        if( pos > count)
-        {
-            System.out.println("Invalid position");
-        }
+        Node trav = head;
 
-        else
+        int i = 0;
+        if( pos == 0)
         {
-            int i=1;
-            while(i<pos)
-            {
-                temp=temp.next;
-                i++;
-            }
-            node.next=temp.next;
-            temp.next=node;
-            
+            node.next = head;
+            head = node;
         }
+        else{
+            while( i != pos-1)
+        {
+            trav = trav.next;
+            i++;
+        }
+        node.next = trav.next;
+        trav.next = node;
+
+
+        }
+        
 
         
     }
@@ -217,6 +216,8 @@ class Linkedlist{
 
             System.out.println("Deleted data is "+deleNode.data);
             
+            //two pointer approach can also be applied
+            
         }
 
 
@@ -260,7 +261,23 @@ class Linkedlist{
         System.out.println("Deleting data is not available in the list");
 
     }
+    
+    public void dele_index()
+    {
+        //two pointer approach
+        Node p = head, q = head.next;
+        System.out.println("Enter the index you want to delete");
+        int index = sc.nextInt();
+        for(int i = 0;i < index - 1;i++)
+        {
+            p = p.next;
+            q = q.next;
+        }
+        p.next = q.next;
 
+    }
+
+    
 
 }
 

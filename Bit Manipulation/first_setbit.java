@@ -16,7 +16,7 @@ public class first_setbit {
                 
             }
         }
-        
+        System.out.println(count);
         
     }
     

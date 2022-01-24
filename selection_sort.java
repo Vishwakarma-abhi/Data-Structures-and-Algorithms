@@ -24,7 +24,7 @@ public class selection_sort {
 
                 }
             }
-            arr[k]=[i];
+            arr[k]=arr[i];
             a[i]=min;
         }
     }
