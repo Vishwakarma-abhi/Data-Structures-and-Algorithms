@@ -50,6 +50,9 @@ public class Linked_List {
                 case 9:
                     list.dele_index();
                     break;
+                case 10:
+                    Node result = list.middle();
+                    System.out.println(result.data);
                 default :
                     System.out.println("Not a Valid choice");
     
@@ -156,11 +159,11 @@ class Linkedlist{
             System.out.println("\n\t Our Linked List is \t");
             while(n.next != null)
             {
-                System.out.println(n.data);
+                System.out.print(n.data);
                 n=n.next;           // pointing to the next node
                 
             }
-            System.out.println(n.data);
+            System.out.print(n.data);
         }
             
             
