@@ -1,61 +1,50 @@
-import java.util.Scanner;
 
-class Node
+import java.util.*;
+
+
+public class Tree
 {
-    int data;
-    Node left;
-    Node right;
+        
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    Node(int data)
-    {
-        this.data=data;
-        left=right=null;
-    }
-}
-
-class Tree
-{
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-
-        Tree obj=new Tree();
-        Node root=new Node();
-        root=obj.create(root);
-        // root.left = new Node(16);
-        // root.right = new Node(6);
-        // root.left.left=new Node(25);
-        // root.left.right=new Node(19);
-        // root.left.right.right=new Node(155);
+ 
+        Node root = create();
         
         //Preorder traversal
-        System.out.println("Preorder Traversal");
-        obj.preorder(root);
+        System.out.println("\nPreorder Traversal");
+        preorder(root);
+
+        System.out.println();
         //PostOrder traversal
         System.out.println("\nPost Order traversal");
-        obj.postorder(root);
+        postorder(root);
+        System.out.println();
         //Inprder traversal
         System.out.println("\n Inorder Traversal");
-        obj.inorder(root);
-        //Total no. of Nodes 
-        System.out.println("\nTotal no. of Nodes = "+obj.countnode(root));
-        //Total no. of Leaf nodes
-        System.out.println("\nTotal no. of leaf nodes"+obj.count_leaf(root)); //to be solved
-    }
+        inorder(root);
+    
+   }
 
     //creating and taking user input for the tree
-    int create(Node root)
+    static Node create()
     {
+        Node root = null;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Data in the node ");
         int value = sc.nextInt();
-        if(value == -1)return 0;
+
+        if(value == -1)
+        {
+            return null;
+        }
+        root = new Node(value);
         
-        root.data = value;
-        System.out.println("Enter the left child value");
-        root.left=create(root.left);
+        System.out.println("Enter the left child of "+ value);
+        root.left=create();
         
-        System.out.println("Enter the right child value");
-        root.right=create(root.right);
+        System.out.println("Enter the right child of"+value);
+        root.right=create();
 
         return root;
 
@@ -63,7 +52,7 @@ class Tree
 
 
     }
-    void preorder(Node root)
+    static void preorder(Node root)
     {   
         //termination condition  [ root left right ]
         if(root == null)
@@ -73,7 +62,7 @@ class Tree
         preorder(root.right);
     }
 
-    void postorder(Node root)
+    static void postorder(Node root)
     {
         //left root right
         if(root == null)return;
@@ -82,7 +71,7 @@ class Tree
         System.out.print(root.data+" ");
     }
 
-    void inorder(Node root)
+    static void inorder(Node root)
     {
         //left root right
         if(root == null)return;
@@ -95,5 +84,19 @@ class Tree
     {
         if(root == null)return 0;
         return ( 1 + countnode(root.left) + countnode(root.right));
+    }
+}
+
+
+class Node
+{
+    int data;
+    Node left;
+    Node right;
+
+    public Node(int data)
+    {
+        this.data=data;
+        
     }
 }
