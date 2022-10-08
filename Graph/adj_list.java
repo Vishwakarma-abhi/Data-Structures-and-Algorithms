@@ -2,18 +2,20 @@ import java.util.*;
 
 public class adj_list {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(Syst
-        em.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the number of Nodes");
-        int n = sc.nextInt();
+        System.out.println("Enter the number of Nodes/Vertices");
+        int n = sc.nextInt();// vertices
         System.out.println("Enter the Number of Edges");
-        int m = sc.nextInt();
+        int m = sc.nextInt();// edges
+
+        // adjacency list to store the the graph
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
 
+        // Initializing the arraylist with arraylist for connections/edges
         for (int i = 0; i <= n; i++) {
-            
+
             adj.add(new ArrayList<>());
         }
 
@@ -32,6 +34,7 @@ public class adj_list {
                 System.out.println(" -->  " + adj.get(i).get(j));
             }
         }
+
     }
 
     // Adding nodes or vertices

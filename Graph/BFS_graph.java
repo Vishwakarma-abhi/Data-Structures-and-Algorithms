@@ -24,32 +24,38 @@ public class BFS_graph {
 			int dest = sc.nextInt();
 			addEdges(source, dest, adj);
 		}
+		System.out.println("Enter starting node for BFS Traversing ");
+		int root = sc.nextInt();
 
 		// Breadth First Search
 		System.out.println("Given Graph Using BFS");
-		System.out.println(BFS(adj, nodes));
+		System.out.println(BFS(adj, nodes, root));
 
 	}
 
-	public static ArrayList<Integer> BFS(ArrayList<ArrayList<Integer>> adj, int vertex) {
+	public static ArrayList<Integer> BFS(ArrayList<ArrayList<Integer>> adj, int vertex, int root) {
 		ArrayList<Integer> bfs = new ArrayList<>();
 
 		boolean visit[] = new boolean[vertex + 1];
 
 		Queue<Integer> q = new LinkedList<>();
 
-		q.add(1);
-		visit[1] = true;
+		// specifying from which node are we travering
+		q.add(root);
+		visit[root] = true;
 
 		while (!q.isEmpty()) {
+			// removing queue's element to traverse its adjacency elements
 			Integer node = q.poll();
+			// adding the root element to the bfs container
 			bfs.add(node);
 
 			// Now Traversing through each vertex (visiting) --> adjacent connected nodes
 			for (int it : adj.get(node)) {
 				if (visit[it] == false) {
+					// mark the adjacent nodes of root node as visited after traversal
 					visit[it] = true;
-					// Adding the non - visited Adjancent node of 'i'
+					// Adding the adjacent node for future traversing
 					q.add(it);
 				}
 			}
