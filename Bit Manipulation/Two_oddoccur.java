@@ -1,6 +1,7 @@
 
 import java.util.*;
 
+//Single Number III --> Leetcode
 public class Two_oddoccur {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -16,6 +17,7 @@ public class Two_oddoccur {
 
     }
 
+    // optimized solution --> O(n) O(1)
     public static void optimize(int[] arr) {
         int res1 = 0, res2 = 0;
         int k = 0;
