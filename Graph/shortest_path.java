@@ -24,30 +24,31 @@ public class shortest_path {
             int dest = sc.nextInt();
             addEdges(source, dest, adj);
         }
-        System.out.println("Enter starting node for BFS Traversing ");
+        System.out.println("Enter starting node for distance to every nodes ");
         int root = sc.nextInt();
 
         // Breadth First Search
         System.out.println("\nGiven Graph Using BFS");
-        System.out.println(BFS(adj, nodes, root));
+        System.out.println("/n " + BFS(adj, nodes, root));
 
     }
 
+    // Bellman Ford Algorithm Concept
+    // Shortest Distance from every node to all other nodes in the graph
     public static ArrayList<Integer> BFS(ArrayList<ArrayList<Integer>> adj, int vertex, int root) {
         ArrayList<Integer> bfs = new ArrayList<>();
 
         boolean visit[] = new boolean[vertex + 1];
-        int dist[] = new int[vertex];
+        int dist[] = new int[vertex + 1];
 
         for (int i = 0; i < dist.length; i++) {
             dist[i] = Integer.MAX_VALUE;
         }
-        dist[0] = 0;
+        dist[root] = 0;
         Queue<Integer> q = new LinkedList<>();
 
         // specifying from which node are we travering
         q.add(root);
-        visit[root] = true;
 
         while (!q.isEmpty()) {
             // removing queue's element to traverse its adjacency elements
@@ -57,11 +58,12 @@ public class shortest_path {
 
             // Now Traversing through each vertex (visiting) --> adjacent connected nodes
             for (int it : adj.get(node)) {
-                if (visit[it] == false) {
+                if (dist[it] > dist[node] + 1) {
 
                     // Here we calculate distance of node to all other vertex(Such as)
                     // node to ---> it(other or adjacent nodes)
                     dist[it] = dist[node] + 1;
+
                     // mark the adjacent nodes of root node as visited after traversal
                     visit[it] = true;
                     // Adding the adjacent node for future traversing
@@ -70,7 +72,7 @@ public class shortest_path {
             }
         }
         System.out.println("\nDistance Array ");
-        for (int i = 0; i < dist.length; i++) {
+        for (int i = 1; i < dist.length; i++) {
             System.out.print(dist[i] + " ");
         }
         return bfs;
