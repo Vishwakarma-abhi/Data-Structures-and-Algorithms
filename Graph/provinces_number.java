@@ -59,7 +59,8 @@ public class provinces_number {
         for (int i : adj.get(start)) {
 
             if (visit[i] == 0) {
-
+                if (start == i)
+                    System.out.println("Cycle");
                 depth_traversal(adj, i, dfs, visit);
 
             }

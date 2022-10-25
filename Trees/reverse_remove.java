@@ -23,11 +23,12 @@ public class reverse_remove {
 
             // if s[i] is a consonant then
             // print r[i]
-            if (s.charAt(i) != 'a' && s.charAt(i) != 'e' && s.charAt(i) != 'i'
-                    && s.charAt(i) != 'o' && s.charAt(i) != 'u') {
-                System.out.print(r[i]);
+            for (int j = i+1; j < s.length; j++) {
+                if(s.charAt(i) == s.charAt(j));
+
+            }
             }
         }
-        System.out.println("");
+        
     }
 }

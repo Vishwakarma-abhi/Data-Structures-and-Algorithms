@@ -36,7 +36,6 @@ public class Linked_List {
 
                     list.insert_pos();
                     break;
-
                 case 6:
                     list.delete_front();
                     break;
@@ -49,13 +48,6 @@ public class Linked_List {
                 case 9:
                     list.dele_index();
                     break;
-                case 10:
-                    list.middle_element();
-                    break;
-
-                case 11:
-                    list.deleteDuplicates();
-
                 default:
                     System.out.println("Not a Valid choice");
 
@@ -79,34 +71,7 @@ class Linkedlist {
     Scanner sc = new Scanner(System.in);
     Node head; // first node
 
-    public void middle_element() {
-        if (head == null) {
-            System.out.println("List is empty");
-        }
-
-        Node slow = head;
-        Node fast = head;
-        while (fast != null && fast.next != null) {
-            // fast pointer taking 2x jump
-            fast = fast.next.next;
-            // slow pointer takees x jump
-            slow = slow.next;
-        }
-        System.out.println("Middle Elelment of the linked List" + slow.data);
-
-    }
-
-    public void deleteDuplicates() {
-
-        Node trav = head;
-        while (trav.next != null) {
-            if (trav.data == trav.next.data) {
-                trav.next = trav.next.next;
-            }
-        }
-
-    }
-
+    // Insertion at first
     public void insert_first() {
         Node node = new Node();
         System.out.println("Enter data to create new node");
@@ -116,6 +81,7 @@ class Linkedlist {
         head = node;
     }
 
+    // Insertion at End
     public void insert_end() {
         Node node = new Node();
         System.out.println("Enter  data to create new node ");
@@ -164,6 +130,7 @@ class Linkedlist {
 
     }
 
+    // travesal and display
     public void display() {
         Node n = head; // temporary (Node) Object for travelling
 
@@ -171,8 +138,8 @@ class Linkedlist {
             System.out.println("Your Linked List is Empty");
         } else {
             System.out.println("\n\t Our Linked List is \t");
-            while (n != null) {
-                System.out.print(n.data + "\n");
+            while (n.next != null) {
+                System.out.print(n.data);
                 n = n.next; // pointing to the next node
 
             }
