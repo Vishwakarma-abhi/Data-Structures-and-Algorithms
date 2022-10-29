@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class string_permutation {
+public class string_permutations {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
