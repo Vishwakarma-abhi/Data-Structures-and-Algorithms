@@ -1,1 +1,1 @@
-System.out.println(prefix_ArrayList);
+System.out.println(halvesAreAlike("book"));
