@@ -12,22 +12,36 @@ public class lead_similar_trees {
         ArrayList<Integer> arr1 = new ArrayList<>();
         ArrayList<Integer> arr2 = new ArrayList<>();
 
-        leafnodes(root1, arr1);
-        leafnodes(root2, arr2);
+        ArrayList<Integer> all = new ArrayList<>();
+
+        leafnodes(root1, arr1, all);
+        // leafnodes(root2, arr2, all);
+
+        System.out.println(all);
+        // int max = Integer.MIN_VALUE;
+        // for (int i = 0; i < all.size(); i++) {
+
+        // if
+
+        // }
 
     }
 
-    public static void leafnodes(Node root, ArrayList<Integer> arr) {
-        if (root == null)
-            return;
-
-        if (root.leftNode == null && root.rightNode == null) {
-            arr.add(root.data);
+    public static void leafnodes(Node root, ArrayList<Integer> arr, ArrayList<Integer> all) {
+        if (root == null) {
+            all.add(-1);
             return;
         }
 
-        leafnodes(root.leftNode, arr);
-        leafnodes(root.rightNode, arr);
+        all.add(root.data);
+
+        // if (root.leftNode == null && root.rightNode == null) {
+        // arr.add(root.data);
+        // return;
+        // }
+
+        leafnodes(root.leftNode, arr, all);
+        leafnodes(root.rightNode, arr, all);
     }
 
     public static Node create() {
