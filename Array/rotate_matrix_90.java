@@ -8,20 +8,46 @@ public class rotate_matrix_90 {
         int n = 3;
         int output[][] = new int[n][n];
 
+        // transpose
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[i].length; j++) {
 
-                output[j][n - i - 1] = mat[i][j];
+                if (i > j) {
+                    int temp = mat[i][j];
+                    mat[i][j] = mat[j][i];
+                    mat[j][i] = temp;
+                }
+
+                // output[j][n - i - 1] = mat[i][j];
+                // System.out.print(mat[n - j - 1][i] + " ");
             }
+            System.out.println();
+        }
+
+        // After transpose we need to reverse the rows for the clockwise rotation
+
+        for (int i = 0; i < mat.length; i++) {
+            rotater(mat, i);
         }
 
         System.out.println("90 degree Rotated Matrix");
         for (int i = 0; i < output.length; i++) {
             for (int j = 0; j < output[i].length; j++) {
-                System.out.print(output[i][j] + "  ");
+                System.out.print(mat[i][j] + " ");
             }
             System.out.println();
         }
+    }
+
+    public static void rotater(int[][] arr, int k) {
+        int n = arr.length;
+        int temp = arr[k][n - 1];
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            arr[k][n - i - 1] = arr[k][n - i - 2];
+        }
+        arr[k][0] = temp;
+
     }
 
 }
