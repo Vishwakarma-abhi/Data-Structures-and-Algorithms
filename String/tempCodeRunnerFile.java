@@ -1,1 +1,1 @@
-System.out.println(halvesAreAlike("book"));
+   // approch_hashmap(str);
