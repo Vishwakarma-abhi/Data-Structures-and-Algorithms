@@ -1,1 +1,1 @@
-   // approch_hashmap(str);
+System.out.println("Found");
