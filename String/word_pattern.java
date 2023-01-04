@@ -19,6 +19,7 @@ public class word_pattern {
             }
 
         }
+        // printing the map
         System.out.println(map);
 
         for (int i = 0; i < sentence.length; i++) {
