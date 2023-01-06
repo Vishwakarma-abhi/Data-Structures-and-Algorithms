@@ -1,12 +1,6 @@
-void Linearsearch(int[] arr, int item, int size)
-    // {
-    //     for(int i = 0;i < size; i++)
-    //     {
-    //         if( arr[i] == item){
-    //             System.out.println("Item Found");
-    //             break;
-    //         }
-            
-    //     }
-
-    // }
+for (int i = 0; i < n; i++) {
+        // for (int j = 0; j <= i; j++) {
+        // System.out.print(list.get(i) + " ");
+        // }
+        // System.out.println();
+        // }

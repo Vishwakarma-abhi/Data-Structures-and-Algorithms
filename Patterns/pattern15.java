@@ -9,7 +9,7 @@ public class pattern15 {
         int n = sc.nextInt();
 
         int alpha;
-        //number of columns assigned to each row
+        // number of columns assigned to each row
         int c = n;
         for (int i = 1; i <= n; i++) {
             alpha = 65;
