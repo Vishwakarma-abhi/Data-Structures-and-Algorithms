@@ -3,7 +3,7 @@ import java.util.*;
 class list_framework {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String visit;
+
         System.out.println("Welcome to Collection Frameworks");
         System.out.println("Enter \n 1 for Arraylist \n 2 for Linkedlist \n 3 for Stack \n 4 for Vector \n 5 for exit");
 
