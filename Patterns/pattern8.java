@@ -2,6 +2,30 @@ import java.util.Scanner;
 
 public class pattern8 {
 
+    // Time complexity -> O(n^2)
+    // Space complexity -> O(n)
+    public static void print_reverseTriangle(int n) {
+        int row = n;
+
+        int odd_star = 2 * n - 1;
+
+        for (int i = 1; i <= row; i++) {
+
+            // loop for printing spaces
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            // now we will have loop for printing star odd times
+            for (int j = 1; j <= odd_star; j++) {
+                System.out.print("*");
+            }
+            odd_star = odd_star - 2;
+            System.out.println();
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -43,28 +67,6 @@ public class pattern8 {
         // System.out.println();
         // }
         print_reverseTriangle(n);
-    }
-
-    public static void print_reverseTriangle(int n) {
-        int row = n;
-
-        int odd_star = 2 * n - 1;
-
-        for (int i = 1; i <= row; i++) {
-
-            // loop for printing spaces
-            for (int j = 1; j <= i - 1; j++) {
-                System.out.print(" ");
-            }
-
-            // now we will have loop for printing star odd times
-            for (int j = 1; j <= odd_star; j++) {
-                System.out.print("*");
-            }
-            odd_star = odd_star - 2;
-            System.out.println();
-        }
-
     }
 
 }
