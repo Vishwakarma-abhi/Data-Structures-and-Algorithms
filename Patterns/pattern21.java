@@ -10,6 +10,7 @@ public class pattern21 {
 
         System.out.println("Holo Rectangle Pattern");
         print_holo_rectangle(n);
+        // approach_two(n);
     }
 
     public static void print_holo_rectangle(int n) {
@@ -39,5 +40,20 @@ public class pattern21 {
             System.out.println();
         }
     }
+
+    // public static void approach_two(int n) {
+    // for (int i = 0; i < n; i++) {
+    // for (int j = 0; j < n; j++) {
+    // if (i == n - 1 || j == n - 1) {
+    // System.out.print("* ");
+    // }
+
+    // // if (i == n - 1 || j == 0) {
+    // // System.out.print("* ");
+    // // }
+    // }
+    // System.out.println();
+    // }
+    // }
 
 }
