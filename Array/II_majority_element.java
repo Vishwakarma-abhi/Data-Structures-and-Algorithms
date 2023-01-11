@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class majority_element {
+public class II_majority_element {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -8,21 +8,20 @@ public class majority_element {
 
         // Input Array
         int arr[] = { 8, 8, 7, 7, 7 };
+        List<Integer> list = new ArrayList<>();
         int len = arr.length;
 
-        // naive approach
-        // Time complexity -> O(size of the map) -> O(n)
-        // Space complexity -> O(n)
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             map.put(arr[i], i);
         }
 
-        naive_Approach(arr, map, len);
+        naive_Approach(arr, map, len, list);
+        System.out.println("Majority elements --> " + map);
 
     }
 
-    public static void naive_Approach(int[] arr, HashMap<Integer, Integer> map, int len) {
+    public static void naive_Approach(int[] arr, HashMap<Integer, Integer> map, int len, List<Integer> list) {
         int maj = 0;
         int count = 0;
         for (Integer i : map.keySet()) {
@@ -32,12 +31,11 @@ public class majority_element {
                     count++;
             }
             System.out.println(i + " -> " + count);
-            if (count > (len / 2)) {
-                maj = i;
-                break;
+            if (count > (len / 3)) {
+                list.add(i);
             }
         }
-        System.out.println("Majority Element --> " + maj);
+
     }
 
 }
