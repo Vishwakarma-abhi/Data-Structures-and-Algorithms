@@ -4,45 +4,21 @@ class merge_sorted_array {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int arr1[] = { 20, 30, 40, 50, 60 };
+        int arr1[] = { 1, 2, 3, 0, 0, 0 };
 
-        int arr2[] = { 15, 22, 31, 45, 56, 62, 78 };
+        int arr2[] = { 2, 5, 6 };
 
-        int result[] = new int[arr1.length + arr2.length];
+        int m = 3, n = 3;
+        // int result[] = new int[arr1.length + arr2.length];
+        int len = m + n;
+        int pointer1 = 0, pointer2 = 0;
 
-        int i = 0, j = 0, idx = 0;
+        // traversing till the end of the array 2
+        while (pointer2 != n) {
 
-        while (i <= arr1.length - 1 && j <= arr2.length - 1) {
+            if (arr2[pointer2] < arr1[pointer1]) {
 
-            if (arr1[i] > arr2[j]) {
-                result[idx] = arr2[j];
-                result[idx + 1] = arr1[i];
-            } else {
-
-                result[idx] = arr1[i];
-                result[idx + 1] = arr2[j];
             }
-            idx = idx + 2;
-            i++;
-            j++;
         }
-
-        while (i != arr1.length) {
-            result[idx] = arr1[i];
-            i++;
-            idx++;
-        }
-
-        while (j != arr2.length) {
-            result[idx] = arr2[j];
-            j++;
-            idx++;
-        }
-
-        System.out.println("Your Merged Array");
-        for (int k = 0; k < result.length; k++) {
-            System.out.print(result[i] + "  ");
-        }
-
     }
 }
