@@ -27,10 +27,13 @@ public class level_order {
 		if (root == null)
 			return list;
 
+		int which_level = 0;
+
 		queue.offer(root);
 
 		while (!queue.isEmpty()) {
 			// levelNum -> Keeps tracks about how many elements are there in the currlevel
+			System.out.println("Level -> " + which_level);
 			int levelNum = queue.size();
 
 			// this data structure stores all the element at each level
@@ -57,6 +60,8 @@ public class level_order {
 			// sublist contains the elements in the currLevel and it is added level wise in
 			// final list
 			list.add(sublist);
+
+			which_level++;
 
 		}
 
