@@ -11,11 +11,19 @@ class Common_prefix {
 
         // System.out.println(calculate_prefix(words[0], words[1]));
 
-        for (int i = 0; i < words.length - 1; i++) {
-            prefix_ArrayList.add(calculate_prefix(words[i], words[i + 1]));
+        // for (int i = 0; i < words.length - 1; i++) {
+        // prefix_ArrayList.add(calculate_prefix(words[i], words[i + 1]));
 
-        }
-        System.out.println(prefix_ArrayList);
+        // }
+        // System.out.println(prefix_ArrayList);
+
+        System.out.println(LCP(words));
+    }
+
+    public static String LCP(String str[]) {
+        String lcp = "";
+
+        return lcp;
 
     }
 
