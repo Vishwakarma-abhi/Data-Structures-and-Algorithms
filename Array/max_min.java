@@ -11,7 +11,7 @@ public class max_min {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-
+        // Time complexity -> O(n) Space-> O(1)
         // function to calculate the sum of max and min element in the array
         int Sum = Sum_max_min(arr, n);
         System.out.println("Sum of Max and Min element of the array -->  " + Sum);
