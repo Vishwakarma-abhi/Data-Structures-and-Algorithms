@@ -6,7 +6,7 @@ public class AddDigits {
 
         System.out.println("Enter a number ");
         int num = sc.nextInt();
-
+        // O(n) -> TC
         // Approach :-
         /*
          * Here we have to see two things the digit sum is calculated
@@ -16,7 +16,7 @@ public class AddDigits {
         while (num >= 10) {
             num = repeatSum(num);
         }
-        System.out.println("Repeated Sum of Digits -> "+num);
+        System.out.println("Repeated Sum of Digits -> " + num);
 
     }
 
