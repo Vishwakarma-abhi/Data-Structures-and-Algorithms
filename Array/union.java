@@ -4,6 +4,7 @@ public class union {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // Time -> O(n+m) Space -> O(n);
         System.out.println("program for Union two arrays");
         int arr1[] = { 1, 2, 3, 4, 5 };
         int arr2[] = { 2, 3, 4 };
