@@ -26,7 +26,7 @@ public class Floor {
                 end = mid - 1;
             }
             if (arr[mid] < target) {
-                res = mid+1;
+                res = mid + 1;
                 start = mid + 1;
             }
 
