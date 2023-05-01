@@ -29,7 +29,7 @@ public class MatrixSearch {
         // is done
         int i = 0, j = 3;
         // condition for array bound error and if the element is not found
-        while (i >= 0 && i <= 3 && j >= 0 && j <= 3) {
+        while (i >= 0 && i <= arr.length && j >= 0 && j <= arr[i].length) {
             if (arr[i][j] == key) {
                 res[0] = i;
                 res[1] = j;
