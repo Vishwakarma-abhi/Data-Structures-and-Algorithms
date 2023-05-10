@@ -33,16 +33,21 @@ class BooksAllocate {
     public static int findPages(int[] arr, int N, int M) {
         // Your code here
         // if no. of books is less than the no. of students
+
         if (N < M)
             return -1;
 
         int start = 0;
         int end = 0;
+        int maxi = arr[0];
+
         for (int i = 0; i < N; i++) {
+            maxi = Math.max(maxi, arr[i]);
             end += arr[i];
         }
 
         int ans = -1;
+        start = maxi;
         int mid = start + (end - start) / 2;
 
         while (start <= end) {
