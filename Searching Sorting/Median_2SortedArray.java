@@ -22,10 +22,10 @@ public class Median_2SortedArray {
 
             // now we will calculate l1, l2 , r1,r2
             int l1 = cut1 == 0 ? Integer.MIN_VALUE : arr1[cut1 - 1];
-            int l2 = cut2 == 0 ? Integer.MIN_VALUE : arr1[cut2 - 1];
+            int l2 = cut2 == 0 ? Integer.MIN_VALUE : arr2[cut2 - 1];
 
-            int r1 = cut1 == n ? Integer.MAX_VALUE : arr1[cut1];
-            int r2 = cut2 == m ? Integer.MAX_VALUE : arr1[cut2];
+            int r1 = cut1 == m ? Integer.MAX_VALUE : arr1[cut1];
+            int r2 = cut2 == n ? Integer.MAX_VALUE : arr2[cut2];
 
             // now we will check the valid condition for the cut1 and cut2 from both the
             // arrays
