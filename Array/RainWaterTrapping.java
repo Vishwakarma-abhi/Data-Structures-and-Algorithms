@@ -11,7 +11,7 @@ public class RainWaterTrapping {
         // Time - O(n^2) Space - O(n)
         BruteForce(arr);
 
-        // Optimized Approach
+        // Optimized Approach -> O(n) Space ->O(n)
         approach2(arr);
 
     }

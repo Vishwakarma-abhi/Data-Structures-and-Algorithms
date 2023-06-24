@@ -7,32 +7,46 @@ import java.util.*;
 class min_Jumps {
     public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        while (t-- > 0) {
-            int N = sc.nextInt();
 
-            Solution ob = new Solution();
-            long ans = sumOfDivisors(N);
-            System.out.println(ans);
-        }
+        int arr[] = { 1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9 };
     }
 
-    static static long sumOfDivisors(int N) {
-        // code here
+    public static int minJumps(int[] arr) {
+        // your code here
 
-        long sum = 0, fsum = 0;
+        int steps = arr[0];
+        int jump = 1;
+        int maxReach = arr[0];
 
-        for (int i = 1; i <= N + 1; i++) {
-            sum = 0;
-            for (int j = 1; j <= N + 1; j++) {
-                // if j is a divisor then add it
-                if (i % j == 0) {
-                    sum += i;
+        if (arr[0] == 0)
+            return -1;
+        else if (arr.length == 1)
+            return 0;
+
+        else {
+            for (int i = 1; i < arr.length; i++) {
+
+                if (i == arr.length - 1)
+                    return jump;
+                maxReach = Math.max(maxReach, arr[i] + i);
+
+                steps--;
+
+                if (steps == 0) {
+                    jump++;
+                    if (i >= maxReach)
+                        return -1;
+
+                    steps = maxReach - i;
                 }
             }
-            fsum = sum;
-
         }
-        return fsum;
+
+        // if(pos >= arr.length-1)
+        // {
+        // return jump;
+        // }
+        return -1;
     }
+
 }

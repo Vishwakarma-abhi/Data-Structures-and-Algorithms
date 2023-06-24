@@ -7,4 +7,7 @@ public class minimize_diff {
         
     }
 
+    
+
+
 }
