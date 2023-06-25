@@ -10,10 +10,22 @@ public class move_negative {
         // approach1(arr);
 
         // Approach - 2 using Two pointer
-        approach2(arr);
-
+        // approach2(arr);
+        int a[] = new int[arr.length];
+        int j = 0, n = arr.length;
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+
+            if (arr[i] < 0) {
+                a[j] = arr[i];
+            }
+            if (arr[i] >= 0) {
+                a[n - j - 1] = arr[i];
+            }
+            j++;
+        }
+        for (int i = 0; i < arr.length; i++) {
+
+            System.out.print(a[i] + " ");
         }
 
     }
