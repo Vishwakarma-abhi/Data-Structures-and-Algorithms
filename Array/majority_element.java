@@ -7,14 +7,67 @@ public class majority_element {
         // we need to optimize the code compulsory
 
         // Input Array
-        int arr[] = { 1, 2, 3 };
-        int len = arr.length;
+        int arr[] = { 2, 2, 1, 1, 1, 2, 2 };
+        // int len = arr.length;
 
-        // naive approach
-        // Time complexity -> O(size of the map) -> O(n)
-        // Space complexity -> O(n)
-        System.out.println("Majority Element --> " + majorityElement(arr, len));
+        // // naive approach
+        // // Time complexity -> O(size of the map) -> O(nlon)
+        // // Space complexity -> O(n)
+        // System.out.println("Majority Element --> " + majorityElement(arr, len));
 
+        // better approach
+        // using hashmap
+        int maj = better(arr);
+        System.out.println(maj);
+
+        optimized(arr);
+
+    }
+
+    // Moore Voting Algorithm
+    private static void optimized(int[] arr) {
+
+        int cnt = 0, el = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+
+            if (cnt == 0) {
+                cnt = 1;
+                el = arr[i];
+            }
+
+            else if (arr[i] == el) {
+                cnt++;
+            } else {
+                cnt--;
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == el) {
+                count++;
+            }
+        }
+        if (count > (arr.length / 2)) {
+            System.out.println(el);
+        } else {
+            System.out.println("NO Majority element");
+        }
+    }
+
+    private static int better(int[] arr) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> it : map.entrySet()) {
+            if (it.getValue() > (arr.length / 2)) {
+                return it.getKey();
+            }
+        }
+        return -1;
     }
 
     static int majorityElement(int a[], int size) {
