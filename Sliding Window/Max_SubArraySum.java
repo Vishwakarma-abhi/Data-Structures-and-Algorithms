@@ -19,7 +19,33 @@ class Max_SubArraySum {
         // brute Force
         bruteForce(arr, win_size);
         // Optimized approach -> Sliding Window
-        
+        optimizedApproach(arr, win_size, size);
+
+    }
+
+    private static void optimizedApproach(int[] arr, int win_size, int size) {
+        int start = 0, end = 0;
+        int maxSubSum = Integer.MIN_VALUE;
+        int sum = 0;
+        int window;
+        while (end < size) {
+            // start adding values
+            sum += arr[end];
+            window = end - start + 1;
+            // condition 1
+            if (window < win_size) {
+                end++;
+            }
+            if (window == win_size) {
+                // do the operation
+                maxSubSum = Math.max(maxSubSum, sum);
+                sum -= arr[start];
+                start++;
+                end++;
+            }
+
+        }
+        System.out.println("maximum sub Array sum -> " + maxSubSum);
     }
 
     private static void bruteForce(int[] arr, int win_size) {
