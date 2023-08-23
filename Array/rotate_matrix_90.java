@@ -39,15 +39,13 @@ public class rotate_matrix_90 {
         }
     }
 
-    public static void rotater(int[][] arr, int k) {
-        int n = arr.length;
-        int temp = arr[k][n - 1];
+    public static void rotater(int[][] arr, int i) {
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            arr[k][n - i - 1] = arr[k][n - i - 2];
+        for (int j = 0; j < arr.length / 2; j++) {
+            int temp = 0;
+            temp = arr[i][j];
+            arr[i][j] = arr[i][arr.length - 1 - i];
+            arr[i][arr.length - 1 - i] = temp;
         }
-        arr[k][0] = temp;
-
     }
-
 }
